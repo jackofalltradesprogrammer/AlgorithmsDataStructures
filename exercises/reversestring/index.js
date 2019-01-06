@@ -8,11 +8,12 @@
 
 function reverse(str) {
 // ***solution 1
-//  let reversed = '';
-//  for (const character of str) {
-//      reversed = character + reversed;
-//  }
-//  return reversed;
+ let reversed = '';
+ for (const character of str) {
+     reversed = character + reversed;
+     debugger;
+ }
+ return reversed;
  
 // *** solution 2
 //   return str
@@ -21,7 +22,10 @@ function reverse(str) {
 //     .join("");
 
 // *** solution 3
-return str.split('').reduce((rev, char) => char + rev, '');
+// debugger;
+// return str.split('').reduce((rev, char) => char + rev, '');
 }
+
+reverse('asdf');
 
 module.exports = reverse;
