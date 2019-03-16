@@ -16,6 +16,9 @@ function palindrome(str) {
     // return str === reversed;
 
     // **** Solution 2
+    // every() returns true if every element of an array return true after going through
+    // the function - it is called with a function that is passed the current element and
+    // has an optional index availabl
     return str.split('').every((char, i) => {
         return char == str[str.length -i - 1];
     });

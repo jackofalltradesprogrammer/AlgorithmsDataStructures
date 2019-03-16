@@ -29,6 +29,7 @@ function chunk(array, size) {
     // return arrayChunk;
 
     // Solution 2 
+    // 
     // const chunked = [];
 
     // for (const element of array) {

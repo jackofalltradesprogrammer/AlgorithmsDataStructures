@@ -23,7 +23,7 @@ function reverseInt(n) {
     // }
     // return Number(string);
 
-    // ***** Solution 2
+    // *****   Solution 2
     // const reversed = n.toString().split('').reverse().join('');
     // if (n < 0) {
     //     return parseInt(reversed) * -1;
@@ -32,9 +32,10 @@ function reverseInt(n) {
 
     //***** Solution 3
     const reversed = n.toString().split('').reverse().join('');
-    return Number(reversed) * Math.sign(n);
+    return parseInt(reversed) * Math.sign(n);
+
 
 }
-// reverseInt(500);  // for debugger statments
+//  reverseInt(-500);  // for debugger statments
 
 module.exports = reverseInt;

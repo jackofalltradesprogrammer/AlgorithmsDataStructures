@@ -8,18 +8,21 @@
 
 function reverse(str) {
 // ***solution 1
- let reversed = '';
- for (const character of str) {
-     reversed = character + reversed;
-     debugger;
- }
- return reversed;
+//  let reversed = '';
+//  for (const character of str) {
+//      reversed = character + reversed;
+//      debugger;
+//  }
+//  return reversed;
  
 // *** solution 2
-//   return str
-//     .split("")
-//     .reverse()
-//     .join("");
+// .
+// .reverse() reverses the array 
+// .split('') splits the string into array of each character
+  return str
+    .split("")
+    .reverse()
+    .join("");
 
 // *** solution 3
 // debugger;
