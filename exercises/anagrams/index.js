@@ -9,24 +9,47 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-    // ** My Solution
-   const mySolution = stringA.replace(/[^\w]/g, "").toLowerCase().split('').sort().join('') ===
-     stringB.replace(/[^\w]/g, "").toLowerCase().split('').sort().join('');
+  // ** My Solution
 
-    const aCharMap = buildCharMap(stringA);
-    const bCharMap = buildCharMap(stringB);
-    
-    
-    }
+  return (
+    stringA
+      .replace(/[^\w]/g, '')
+      .toLowerCase()
+      .split('')
+      .sort()
+      .join('') ===
+    stringB
+      .replace(/[^\w]/g, '')
+      .toLowerCase()
+      .split('')
+      .sort()
+      .join('')
+  );
+
+
+// Solution 2
+//   const aCharMap = buildCharMap(stringA);
+//   const bCharMap = buildCharMap(stringB);
+
+//   if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+//     return false;
+//   }
+
+//   for (let char in aCharMap) {
+//     if (aCharMap[char] !== bCharMap[char]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// function buildCharMap(string) {
+//   const charMap = {};
+//   for (let char of string.replace(/[^\w]/g, '').toLowerCase()) {
+//     charMap[char] = charMap[char] + 1 || 1;
+//   }
+//   return charMap;
+// }
 
 }
-
-function buildCharMap(string){
-    const charMap = {};
-    for (let char of string.replace(/[^\w]/g, '').toLowerCase()) {
-        charMap[char] = charMap[char]+1 || 1;
-    }
-    return charMap;
-}
-
 module.exports = anagrams;
