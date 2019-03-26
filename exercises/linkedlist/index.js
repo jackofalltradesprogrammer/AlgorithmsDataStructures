@@ -16,7 +16,8 @@ class LinkedList {
   }
 
   insertFirst(data) {
-    this.head = new Node(data, this.head);
+    // this.head = new Node(data, this.head);
+    this.insertAt(data, 0);
   }
 
   size() {
@@ -31,19 +32,22 @@ class LinkedList {
   }
 
   getFirst() {
-    return this.head;
+    // return this.head;
+    return this.getAt(0);
   }
 
   getLast() {
-    let node = this.head;
-    if (!node) {
-      return null;
-    }
-    while (node.next) {
-      node = node.next;
-    }
-    return node;
-  }
+  //   let node = this.head;
+  //   if (!node) {
+  //     return null;
+  //   }
+  //   while (node.next) {
+  //     node = node.next;
+  //   }
+  //   return node;
+  // 
+  return this.getAt(this.size()-1);
+}
 
   clear() {
     this.head = null;
@@ -127,6 +131,20 @@ class LinkedList {
     let previousNode = this.getAt(index - 1) || this.getLast();
 
     previousNode.next = new Node(data, previousNode.next);
+  }
+
+  forEach(func){
+    for(let i=0; i< this.size(); i++){
+      func(this.getAt(i), i);
+    }
+  }
+
+  *[Symbol.iterator]() {
+    let node = this.head;
+    while (node) {
+      yield node;
+      node = node.next;
+    }
   }
 }
 
