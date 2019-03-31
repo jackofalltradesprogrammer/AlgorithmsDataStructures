@@ -12,6 +12,20 @@
 //   c.next = b;
 //   circular(l) // true
 
-function circular(list) {}
+function circular(list) {
+  let slow = list.getFirst();
+  let fast = list.getFirst();
+
+  // we can use the stepping approach to find the circular linked list because eventually
+  // slow and fast will refer to the same node 
+  while (fast.next && fast.next.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+    if (slow.next === fast.next) {
+      return true;
+    }
+  }
+  return false;
+}
 
 module.exports = circular;
