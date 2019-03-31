@@ -18,7 +18,7 @@ function midpoint(list) {
   // and breaks the loop and at that time slow must be pointing to the middle regardless list is even or odd in size
 
   while (fast.next && fast.next.next) {
-    slow = start.next;
+    slow = slow.next;
     fast = fast.next.next;
   }
   return slow;
