@@ -12,6 +12,16 @@
 //   l.insertLast('c')
 //   midpoint(l); // returns { data: 'b' }
 
-function midpoint(list) {}
+function midpoint(list) {
+  let slow = list.head; // it steps 1 node at a time
+  let fast = list.head; // it steps 2 node at a time and when it gets to the last,
+  // and breaks the loop and at that time slow must be pointing to the middle regardless list is even or odd in size
+
+  while (fast.next && fast.next.next) {
+    slow = start.next;
+    fast = fast.next.next;
+  }
+  return slow;
+}
 
 module.exports = midpoint;
