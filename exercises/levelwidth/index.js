@@ -11,6 +11,31 @@
 // 4       5
 // Answer: [1, 3, 2]
 
-function levelWidth(root) {}
+function levelWidth(root) {
+  if (!root) {
+    return null;
+  }
+  const counters = [0];
+  const arr = [root, 's'];
+  // const levelEnd = 's';
+  // arr.push(levelEnd);
+  // let index = 0;
+
+  while (arr.length > 1) {
+    const node = arr.shift();
+    if (node === 's') {
+      // index = index+1;
+      // counters[index] = 0;
+      counters.push(0);
+      arr.push('s');
+    } else {
+      arr.push(...node.children);
+      counters[counters.length - 1]++;
+    }
+  }
+
+  // can be used to get HEIGHT of tree with counters.length-1
+  return counters;
+}
 
 module.exports = levelWidth;
